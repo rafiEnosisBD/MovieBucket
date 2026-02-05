@@ -1,0 +1,6 @@
+@MovieBucket.API_HostAddress = http://localhost:5208
+
+GET {{MovieBucket.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
