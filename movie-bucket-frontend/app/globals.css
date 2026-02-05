@@ -1,0 +1,476 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Includes padding and border in element width */
+}
+/* Body Styles - Base typography and background */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif; /* Modern, readable font stack */
+  background-color: #f5f7fa; /* Light gray background */
+  color: #333; /* Dark gray text for readability */
+  line-height: 1.5; /* Comfortable line spacing */
+}
+/* ============================================================================
+   CONTAINER
+   ============================================================================
+   Main container that centers content and provides white background
+*/
+.container {
+  max-width: 1200px; /* Maximum width for large screens */
+  margin: 30px auto; /* Centers container horizontally */
+  padding: 20px; /* Internal spacing */
+  background-color: #ffffff; /* White background for content area */
+  border-radius: 8px; /* Rounded corners */
+}
+/* ============================================================================
+   PAGE HEADER
+   ============================================================================
+   Styles for page headers on all pages
+*/
+.page-header {
+  margin-bottom: 20px; /* Space below header */
+}
+/* Title Wrapper - Flexbox layout for title and icon */
+.title-wrapper {
+  display: flex;
+  align-items: center; /* Vertically centers items */
+  justify-content: center; /* Horizontally centers items */
+  gap: 10px; /* Space between title and icon */
+}
+/* Main Page Title */
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 600; /* Semi-bold */
+  color: #0BDA51; /* Primary green color */
+}
+/* Header Link - Makes title clickable */
+.page-header h1 .header-link {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherits green color from h1 */
+}
+/* Header Link Hover Effect */
+.page-header h1 .header-link:hover {
+  color: #32CD32; /* Lighter green on hover */
+}
+/* Page Subtitle (e.g., "Add Hotel", "Update Hotel") */
+.page-header h2 {
+  font-size: 20px;
+  font-weight: 500; /* Medium weight */
+  color: #333;
+  margin-top: 5px;
+  text-align: center;
+}
+/* Location Icon - Material icon next to title */
+.location-icon {
+  font-size: 30px;
+  color: #0BDA51; /* Matches title color */
+  font-weight: bold;
+}
+/* ============================================================================
+   ACTION BAR (Add Button + Search)
+   ============================================================================
+   Top action bar containing "Add New" button and search functionality
+*/
+.action-bar {
+  display: flex;
+  align-items: center; /* Vertically centers items */
+  justify-content: space-between; /* Space between add button and search */
+  gap: 15px; /* Space between items */
+  margin-bottom: 20px; /* Space below action bar */
+}
+/* ============================================================================
+   SEARCH SECTION
+   ============================================================================
+   Search input and button styling
+*/
+.search-section {
+  display: flex;
+  align-items: center; /* Vertically centers input and button */
+  gap: 8px; /* Space between input and button */
+}
+/* ============================================================================
+   FILTER SECTION
+   ============================================================================
+   Filter controls: Location, Rating, Budget Range
+*/
+/* Filter Label */
+.filter {
+  font-weight: bold;
+  padding-bottom: 5px; /* Space below label */
+}
+/* Filter Section - Grid layout for responsive filter controls */
+.filter-section {
+  display: grid;
+  /* Responsive grid: auto-fit columns with minimum 160px width */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 6px; /* Space between grid items */
+  margin-bottom: 25px; /* Space below filter section */
+  align-items: center; /* Vertically centers all items */
+}
+/* Filter Section Paragraphs (e.g., "Budget Range:") */
+.filter-section p {
+  margin: 0; /* Removes default margin */
+  align-self: center; /* Centers within grid cell */
+  white-space: nowrap; /* Prevents text wrapping */
+}
+/* Budget Range Label - Right-aligned for better visual alignment */
+.budget-range {
+  text-align: right;
+}
+/* ============================================================================
+   BUTTONS
+   ============================================================================
+   Button styles for primary and secondary actions
+*/
+/* Base Button Styles */
+button {
+  cursor: pointer; /* Shows hand cursor on hover */
+  border: none; /* Removes default border */
+  outline: none; /* Removes focus outline (we add custom focus styles) */
+  font-size: 14px;
+}
+/* Primary Button - Used for main actions (Add, Submit) */
+.primary-btn {
+  background-color: #0BDA51; /* Primary green */
+  color: #ffffff; /* White text */
+  padding: 10px 16px; /* Comfortable padding */
+  border-radius: 6px; /* Rounded corners */
+  display: inline-flex; /* Allows flexbox for icon alignment */
+  align-items: center; /* Vertically centers content */
+  gap: 6px; /* Space between text and icon */
+}
+/* Primary Button Hover Effect */
+.primary-btn:hover {
+  background-color: #32CD32; /* Lighter green on hover */
+}
+/* Secondary Button - Used for filter button */
+.secondary-btn {
+  background-color: #0BDA51; /* Same as primary */
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+/* Secondary Button Hover Effect */
+.secondary-btn:hover {
+  background-color: #32CD32;
+}
+/* ============================================================================
+   INPUTS & SELECTS
+   ============================================================================
+   Form input styling for text fields, selects, and textareas
+*/
+/* Base Input Styles - Applied to all form inputs */
+input,
+select,
+textarea {
+  width: 100%; /* Full width of container */
+  padding: 9px 10px; /* Comfortable padding */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px;
+}
+/* Focus State - Highlights active input */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none; /* Removes default browser outline */
+  border-color: #1976d2; /* Blue border on focus */
+}
+/* Search Input - Specific styling for search field */
+#searchInput {
+  flex: 1; /* Takes available space in flex container */
+  min-width: 200px; /* Minimum width for usability */
+  padding: 9px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+/* Search Button */
+#searchBtn {
+  background-color: #0BDA51; /* Green background */
+  color: #fff; /* White icon */
+  padding: 9px 12px; /* Padding for icon */
+  border-radius: 5px;
+}
+/* Search Button Hover */
+#searchBtn:hover {
+  background-color: #32CD32; /* Lighter green */
+}
+/* ============================================================================
+   TABLE STYLES
+   ============================================================================
+   Hotel table styling with sortable headers
+*/
+/* Table Container */
+.hotel-table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Removes space between borders */
+  margin-top: 20px; /* Space above table */
+}
+/* Table Data Cells */
+.hotel-table td {
+  padding: 12px; /* Cell padding */
+  text-align: left; /* Left-aligned text */
+  vertical-align: middle; /* Vertically centers content */
+}
+/* Table Header Cells */
+.hotel-table th {
+  background-color: #0BDA51; /* Green background */
+  color: white; /* White text */
+  font-weight: 600; /* Semi-bold */
+  cursor: pointer; /* Shows hand cursor (sortable) */
+  text-align: left;
+  padding: 10px;
+}
+/* Table Header Hover Effect */
+.hotel-table th:hover {
+  background-color: #32CD32; /* Lighter green on hover */
+}
+/* Alternating Row Colors - Zebra striping for readability */
+.hotel-table tbody tr:nth-child(even) {
+  background-color: #e8e8e8; /* Light gray for even rows */
+}
+/* Table Images - Hotel pictures */
+.hotel-table img {
+  width: 300px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Crops image to fit while maintaining aspect ratio */
+  border-radius: 4px; /* Rounded corners */
+}
+/* Sort Icons Container */
+.hotel-table .sort-icons {
+  display: inline-flex; /* Inline flex for icon alignment */
+  flex-direction: column; /* Stack icons vertically */
+  font-size: 10px; /* Small icons */
+  margin-left: 5px; /* Space from column name */
+  color: white; /* White icons */
+  vertical-align: middle; /* Vertically aligns with text */
+}
+/* Sort Icons - Up and Down arrows */
+.hotel-table .sort-icons .fa-sort-up,
+.hotel-table .sort-icons .fa-sort-down {
+  line-height: 0.5; /* Tight spacing between icons */
+  opacity: 0.5; /* Semi-transparent when inactive */
+  transition: opacity 0.2s; /* Smooth opacity transition */
+}
+/* Active Sort Icons - Highlighted when column is sorted */
+.hotel-table .sort-icons .fa-sort-up.active,
+.hotel-table .sort-icons .fa-sort-down.active {
+  opacity: 1; /* Fully opaque */
+  color: #ffffff; /* White color */
+  font-weight: bold; /* Bold for emphasis */
+}
+/* Name Column - Wider to accommodate hotel names */
+.name-column {
+  width: 250px;
+}
+/* Options Column Cell - Centers edit/delete buttons */
+.hotel-table td.options-cell {
+  vertical-align: middle; /* Vertically centers buttons */
+  text-align: center; /* Horizontally centers buttons */
+}
+/* Options Container - Flexbox for button alignment */
+.hotel-table .options {
+  display: inline-flex; /* Inline flex container */
+  gap: 10px; /* Space between edit and delete buttons */
+  justify-content: center; /* Centers buttons horizontally */
+  align-items: center; /* Centers buttons vertically */
+}
+/* Options Buttons - Edit and Delete buttons */
+.hotel-table .options button {
+  background: none; /* Transparent background */
+  border: none; /* No border */
+  cursor: pointer; /* Hand cursor */
+  font-size: 16px; /* Icon size */
+}
+/* Edit Icon - Green color */
+.hotel-table .options .fa-edit {
+  color: #0BDA51;
+}
+/* Delete Icon - Red color */
+.hotel-table .options .fa-trash {
+  color: #dc3545; /* Red for delete action */
+}
+/* Table Links - Hotel name links */
+.hotel-table a {
+  color: inherit; /* Inherits text color */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.2s; /* Smooth color transition */
+}
+/* Table Link Hover */
+.hotel-table a:hover {
+  color: #0BDA51; /* Green on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+/* Edit Button Hover */
+.hotel-table .options button:hover .fa-edit {
+  color: #32CD32; /* Lighter green */
+}
+/* Delete Button Hover */
+.hotel-table .options button:hover .fa-trash {
+  color: #ff4444; /* Brighter red */
+}
+/* ============================================================================
+   FORM STYLES
+   ============================================================================
+   Form container and field styling
+*/
+/* Form Actions - Submit button container */
+.form-actions {
+  text-align: center; /* Centers submit button */
+  margin-top: 20px; /* Space above button */
+}
+/* Form Container - Limits form width for better readability */
+.form-container {
+  max-width: 600px; /* Maximum form width */
+  margin: 0 auto; /* Centers form horizontally */
+}
+/* Form Group - Container for each form field */
+.form-group {
+  margin-bottom: 15px; /* Space between form fields */
+}
+/* Form Labels */
+.form-group label {
+  display: block; /* Block-level for spacing */
+  margin-bottom: 6px; /* Space below label */
+  font-weight: 500; /* Medium weight */
+}
+/* Required Field Indicator - Red asterisk */
+.required {
+  color: red; /* Red for emphasis */
+}
+/* Required Field Notice - Message above form */
+.required-note {
+  font-size: 13px; /* Smaller text */
+  color: #666; /* Gray color */
+  margin-bottom: 8px; /* Space below notice */
+}
+/* ============================================================================
+   ERROR MESSAGE
+   ============================================================================
+   Validation error display
+*/
+.error-message {
+  display: none; /* Hidden by default, shown by JavaScript when errors occur */
+  background-color: #fdecea; /* Light red background */
+  color: #d32f2f; /* Dark red text */
+  padding: 10px; /* Internal padding */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 15px; /* Space below error message */
+}
+/* ============================================================================
+   DETAIL PAGE MEDIA SECTION
+   ============================================================================
+   Image and video display on detail page
+*/
+/* Media Section - Flexbox container for image and video */
+.media-section {
+  display: flex;
+  gap: 20px; /* Space between image and video */
+  margin-bottom: 25px; /* Space below media section */
+}
+/* Media Box - Container for image or video */
+.media-box {
+  flex: 1; /* Equal width for both boxes */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  padding: 10px; /* Internal padding */
+  text-align: center; /* Centers content */
+}
+/* Media Box Images */
+.media-box img {
+  max-width: 100%; /* Responsive width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 5px; /* Rounded corners */
+}
+/* Media Box Video Iframe - YouTube embed */
+.media-box iframe {
+  width: 100%; /* Full width of container */
+  height: 315px; /* Standard YouTube embed height */
+  border-radius: 5px; /* Rounded corners */
+}
+/* ============================================================================
+   DETAIL PAGE INFORMATION SECTION
+   ============================================================================
+   Hotel information display on detail page
+*/
+/* Details Section Heading */
+.details-section h2 {
+  margin-bottom: 10px; /* Space below heading */
+}
+/* Details Section Paragraphs */
+.details-section p {
+  margin-bottom: 6px; /* Space between info items */
+}
+/* Detail Divider - Horizontal line separating sections */
+.detail-divider {
+  width: 70%; /* 70% of container width */
+  margin: 20px auto; /* Centers horizontally with vertical spacing */
+  border: none; /* Removes default border */
+  border-top: 1px solid #ddd; /* Top border only */
+}
+/* About Section */
+.about-section {
+  margin-top: 15px; /* Space above about section */
+}
+/* About Section Heading */
+.about-section h3 {
+  margin-bottom: 8px; /* Space below heading */
+  font-size: 18px; /* Slightly larger than paragraph */
+}
+/* About Section Paragraph */
+.about-section p {
+  line-height: 1.6; /* Comfortable line spacing for readability */
+  color: #555; /* Slightly lighter than main text */
+}
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================
+   Mobile-friendly styles for screens smaller than 768px
+*/
+@media (max-width: 768px) {
+  /* Action Bar - Stack vertically on mobile */
+  .action-bar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Full width items */
+  }
+  /* Search Section - Full width on mobile */
+  .search-section {
+    width: 100%;
+  }
+  /* Filter Section - Single column on mobile */
+  .filter-section {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+  /* Media Section - Stack image and video vertically */
+  .media-section {
+    flex-direction: column; /* Stack vertically */
+  }
+  /* Table - Smaller font on mobile */
+  .hotel-table {
+    font-size: 12px; /* Smaller text for mobile */
+  }
+  /* Table Images - Smaller on mobile */
+  .hotel-table img {
+    width: 150px; /* Smaller width */
+    height: 100px; /* Smaller height */
+  }
+}
+
+/* Small utility tweaks for this Next.js app */
+.inline-error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.inline-help {
+  color: #666;
+  font-size: 13px;
+}
+.synopsis-scroll {
+  max-height: 180px;
+  overflow: auto;
+  padding-right: 6px;
+}
